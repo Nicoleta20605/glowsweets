@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Coșul meu - GlowSweets</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.jpg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="../javascript.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Poppins:wght@300;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="header">
+        <div id="myNav" class="nav">
+             <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="Logo" /></a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html" onclick="hideMenu()">Acasă</a>
+                <a href="../pages/catalog.html" onclick="hideMenu()">Catalog</a>
+                <a href="../pages/contact.html" onclick="hideMenu()">Contacte</a>
+                <a href="../pages/cosulmeu.html" onclick="hideMenu()">Coșul Meu</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="responsiveMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+
+<h1 class="titlu-cos">Coșul Meu</h1>
+<br>
+
+    <div id="cart-items"></div>
+    <div id="cart-total"></div>
+    <div id="cart-buttons" style="margin-top: 20px;">
+        <button id="clear-cart">Golește coșul</button>
+        <button id="checkout">Finalizează comanda</button>
+    </div>
+
+
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotalContainer = document.getElementById('cart-total');
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+    if (Object.keys(cart).length === 0) {
+        cartItemsContainer.innerHTML = '<p>Coșul este gol.</p>';
+        return;
+    }
+
+    let total = 0;
+    let html = `
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="border-bottom: 2px solid #ccc; text-align: left;">
+                    <th style="padding: 8px;">Produs</th>
+                    <th style="padding: 8px; text-align: right;">Preț total</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    for (const id in cart) {
+        const item = cart[id];
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        html += `
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 8px; display: flex; align-items: center;">
+                    <img src="${item.image || '../images/default-product.png'}" alt="${item.name}" style="width: 70px; height: 70px; object-fit: cover; margin-right: 12px; border-radius: 5px;">
+                    <div>
+                        <div style="font-weight: 600;">${item.name}</div>
+                        <div style="font-size: 0.9em; color: #555;">Cantitate: ${item.quantity}</div>
+                    </div>
+                </td>
+                <td style="padding: 8px; text-align: right; font-weight: 600;">${itemTotal.toFixed(2)} lei</td>
+            </tr>
+        `;
+    }
+
+    html += `</tbody></table>`;
+    cartItemsContainer.innerHTML = html;
+    cartTotalContainer.innerHTML = `<strong>Total: ${total.toFixed(2)} lei</strong>`;
+
+  
+    document.getElementById('clear-cart').addEventListener('click', () => {
+        localStorage.removeItem('cart');
+        location.reload();
+    });
+
+
+    document.getElementById('checkout').addEventListener('click', () => {
+        if (Object.keys(cart).length === 0) {
+            alert('Coșul este gol.');
+            return;
+        }
+
+        const produse = Object.values(cart)
+            .map(item => `${item.name} x${item.quantity}`)
+            .join(', ');
+
+        const totalComanda = total.toFixed(2);
+
+        localStorage.setItem('produse', produse);
+        localStorage.setItem('total', totalComanda);
+
+        window.location.href = 'finalizare.html';
+    });
+});
+</script>
+
+    
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <footer>
+        <p>&copy; 2025 GlowSweets. Acest website a fost realizat în cadrul concursului<br />
+            "Tekwill Junior Ambassadors" organizat de proiectul "Tekwill în Fiecare Școală".</p>
+        <div class="socials">
+            <a
+                href="https://www.instagram.com/enisnatalia6?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+            <a href="https://www.facebook.com/natalia.ajder.9">Facebook</a>
+            <a href="https://www.tiktok.com/@enis.natalia?is_from_webapp=1&sender_device=pc">TikTok</a>
+        </div>
+        <p><span id="date"></span></p>
+    </footer>
+
+</body>
+
+</html>

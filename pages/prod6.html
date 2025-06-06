@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tort cu Mango și Cocos - GlowSweets</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.jpg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="../javascript.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Poppins:wght@300;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="nav" id="myNav">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="Logo" /></a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html" onclick="hideMenu()">Acasă</a>
+                <a href="../pages/catalog.html" onclick="hideMenu()">Catalog</a>
+                <a href="../pages/contact.html" onclick="hideMenu()">Contacte</a>
+                <a href="../pages/cosulmeu.html" onclick="hideMenu()">Coșul Meu</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="responsiveMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+    <main class="pagina-produs">
+        <div class="imagine-produs">
+            <img src="../images/cocos_mango.png" />
+        </div>
+        <div class="detalii-produs">
+            <h2>Tort cu Mango și Cocos</h2>
+            <p class="pret">470 MDL</p>
+            <p class="weight">1200 g</p>
+            <p class="descriere">
+                O combinație exotică și răcoritoare, Tortul cu Mango și Cocos aduce în farfurie aromele vibrante ale
+                fructului de mango dulce și textura fină a nucii de cocos. Blatul moale, ușor și pufos este însoțit de o
+                cremă delicată cu infuzie de cocos, care echilibrează perfect dulceața intensă a mango-ului proaspăt.
+
+
+            </p>
+
+            <form class="formular-cos" id="add-to-cart-form">
+                <label for="cantitate">Cantitate:</label>
+                <input type="number" id="cantitate" name="cantitate" value="1" min="1" max="20" />
+
+                <button type="submit">Adaugă în coș</button>
+            </form>
+
+            <p><a href="../pages/catalog.html">← Înapoi la catalog</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 GlowSweets. Acest website a fost realizat în cadrul concursului<br />
+            "Tekwill Junior Ambassadors" organizat de proiectul "Tekwill în Fiecare Școală".</p>
+        <div class="socials">
+            <a
+                href="https://www.instagram.com/enisnatalia6?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+            <a href="https://www.facebook.com/natalia.ajder.9">Facebook</a>
+            <a href="https://www.tiktok.com/@enis.natalia?is_from_webapp=1&sender_device=pc">TikTok</a>
+        </div>
+    </footer>
+    <script>
+document.getElementById('add-to-cart-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const productId = 'tort_mango_cocos';
+  const productName = 'Tort cu Mango și Cocos';
+  const productPrice = 470;
+  const productImage = '../images/cocos_mango.png';
+
+  const quantityInput = document.getElementById('cantitate');
+  const quantity = parseInt(quantityInput.value);
+
+  if (isNaN(quantity) || quantity < 1) {
+    alert('Te rog să introduci o cantitate validă.');
+    quantityInput.focus();
+    return;
+  }
+
+  let cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+  if (cart[productId]) {
+    cart[productId].quantity += quantity;
+  } else {
+    cart[productId] = {
+      name: productName,
+      price: productPrice,
+      quantity: quantity,
+      image: productImage
+    };
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(`${productName} a fost adăugat în coș.`);
+});
+</script>
+
+</body>
+
+</html>

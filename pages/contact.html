@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact - GlowSweets</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.jpg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="../javascript.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Poppins:wght@300;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div id="myNav" class="nav">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="Logo" /></a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html" onclick="hideMenu()">Acasă</a>
+                <a href="../pages/catalog.html" onclick="hideMenu()">Catalog</a>
+                <a href="../pages/contact.html" onclick="hideMenu()">Contacte</a>
+                <a href="../pages/cosulmeu.html" onclick="hideMenu()">Coșul Meu</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="responsiveMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+
+
+        <div class="contact-page">
+            <div class="contact-info">
+                <h2>Informații de contact</h2>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="icon"><i class="fas fa-envelope"></i></div>
+                        <div class="text">
+                            <strong>Persoană de contact:</strong>
+                            <p>Natalia Enis – Manager General</p>
+                        </div><br><br><br>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="text">
+                            <strong>Adresă:</strong>
+                            <p><a href="https://maps.app.goo.gl/CNue7Eb3aofY4gpF6">
+                                    Str. Florilor nr. 5
+                                </a></p>
+                        </div> <br><br><br>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="text">
+                            <strong>Telefon:</strong>
+                            <p><a href="tel:+37360431257">+37360431257</a></p>
+                        </div><br><br><br>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon"><i class="fas fa-envelope"></i></div>
+                        <div class="text">
+                            <strong>Email:</strong>
+                            <p><a href="mailto:enisnatalia6@gmail.com">enisnatalia6@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h2>Contactează-ne</h2>
+                <form id="orderForm">
+                    <input type="text" id="nume" name="nume" placeholder="Numele și prenumele tău" required>
+                    <input type="email" id="email" name="email" placeholder="Adresa ta de email" required>
+                    <textarea id="mesaj" name="mesaj" placeholder="Mesajul tău" required></textarea>
+                    <button type="submit">Trimite</button>
+                </form>
+
+               
+
+            </div>
+        </div>
+        <div class="fb-comments-container">
+            <h2>Ai un feedback? Scrie-ne!</h2>
+            <div class="fb-comments" data-href="http://tekwill.online/enis-natalia" data-numposts="5" data-width="100%"
+                data-order-by="reverse_time" data-colorscheme="light"></div>
+        </div>
+
+
+        <footer>
+            <p>&copy; 2025 GlowSweets. Acest website a fost realizat în cadrul concursului<br />
+                "Tekwill Junior Ambassadors" organizat de proiectul "Tekwill în Fiecare Școală".</p>
+            <div class="socials">
+                <a
+                    href="https://www.instagram.com/enisnatalia6?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+                <a href="https://www.facebook.com/natalia.ajder.9">Facebook</a>
+                <a href="https://www.tiktok.com/@enis.natalia?is_from_webapp=1&sender_device=pc">TikTok</a>
+            </div>
+        </footer>
+        <script>
+(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+
+
+
+  
+                    document.getElementById("orderForm").addEventListener("submit", function (event) {
+                        event.preventDefault();
+
+                        let formData = {
+                            nume: document.getElementById("nume").value,
+                            email: document.getElementById("email").value,
+                            mesaj: document.getElementById("mesaj").value
+                        };
+
+                        fetch("https://sheetdb.io/api/v1/ce026r21mzyxo", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ data: formData })
+                        })
+                            .then(response => response.json())
+                            .then(data => {
+                                alert("Formularul a fost trimis cu succes!");
+                                document.getElementById("orderForm").reset();
+                            })
+                            .catch(error => console.error("Eroare:", error));
+                    });
+               </script>
+   
+</body>
+
+</html>

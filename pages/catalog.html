@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Catalog - GlowSweets</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.jpg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="../javascript.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Poppins:wght@300;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="nav" id="myNav">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="Logo" /></a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html" onclick="hideMenu()">Acasă</a>
+                <a href="../pages/catalog.html" onclick="hideMenu()">Catalog</a>
+                <a href="../pages/contact.html" onclick="hideMenu()">Contacte</a>
+                <a href="../pages/cosulmeu.html" onclick="hideMenu()">Coșul Meu</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="responsiveMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <main>
+            <section class="catalog">
+                <div class="container">
+                   <br/> <h1 align="center">Torturi</h1><br>
+
+                    <div class="product-grid">
+                        <div class="product-card" data-id="prod1">
+                            <img src="../images/tort_ciocolata.png" />
+                            <h3>Tort cu ciocolată neagră</h3>
+                            <p class="price">450 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod1.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod2">
+                            <img src="../images/red_velvet.png" />
+                            <h3> Tort Red Velvet de Sărbătoare</h3>
+                            <p class="price">480 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod2.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod3">
+                            <img src="../images/tiramisu.png" />
+                            <h3>Tort Tiramisu cu Mascarpone</h3>
+                            <p class="price"> 460 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod3.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod4">
+                            <img src="../images/tort_morcovi.png" />
+                            <h3>Tort de Morcovi cu Cremă de Brânză</h3>
+                            <p class="price">440 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod4.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod5">
+                            <img src="../images/tort_fructe_de_padure.png" />
+                            <h3>Tort cu Fructe de Pădure</h3>
+                            <p class="price">480 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod5.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod6">
+                            <img src="../images/cocos_mango.png" />
+                            <h3>Tort cu Mango și Cocos</h3>
+                            <p class="price">470 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod6.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod7">
+                            <img src="../images/oreo.png" />
+                            <h3>Tort Oreo cu Cremă de Vanilie</h3>
+                            <p class="price">460 MDL </p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod7.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod8">
+                            <img src="../images/nuci_caramel.png" />
+                            <h3>Tort de Nuci și Caramel</h3>
+                            <p class="price">470 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod8.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod9">
+                            <img src="../images/vanilie_zmeura.png" />
+                            <h3>Tort Vanilie cu Zmeură Fresh</h3>
+                            <p class="price">460 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod9.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod10">
+                            <img src="../images/mousse.png" />
+                            <h3>Tort Mousse de Ciocolată și Cafea</h3>
+                            <p class="price">480 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod10.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+                    </div>
+                   <br/> 
+
+                    <h1 align="center">Platouri Asortate</h1><br>
+
+                    <div class="product-grid">
+                        <div class="product-card" data-id="prod11">
+                            <img src="../images/mini_tarte.png" />
+                            <h3>Platou Mini-Tarte Asortate</h3>
+                            <p class="price">250 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod11.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod12">
+                            <img src="../images/macarons.png" />
+                            <h3>Platou Macarons în Culori Pastelate</h3>
+                            <p class="price">300 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod12.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod13">
+                            <img src="../images/eclere.png" />
+                            <h3>Platou Eclere & Choux-uri</h3>
+                            <p class="price">280 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod13.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod14">
+                            <img src="../images/prajituri.png" />
+                            <h3>Platou Prăjituri de Casă</h3>
+                            <p class="price">200 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod14.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod15">
+                            <img src="../images/briose.png" />
+                            <h3>Platou Brioșe cu Topping-uri Diverse</h3>
+                            <p class="price">220 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod15.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod16">
+                            <img src="../images/biscuiti.png" />
+                            <h3>Platou Biscuiți Decorativi</h3>
+                            <p class="price">180 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod16.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod17">
+                            <img src="../images/prajituri_fine.png" />
+                            <h3> Platou Prăjituri Fine Asortate </h3>
+                            <p class="price">320 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod17.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod18">
+                            <img src="../images/trufe.png" />
+                            <h3> Platou Trufe & Delicii de Ciocolată</h3>
+                            <p class="price">350 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod18.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod19">
+                            <img src="../images/fresh.png" />
+                            <h3>Platou Fresh – Fructe & Deserturi Ușoare</h3>
+                            <p class="price">250 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod19.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod20">
+                            <img src="../images/tematic.png" />
+                            <h3> Platou Festiv Tematic Exclusiv </h3>
+                            <p class="price">240 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod20.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+                    </div>
+
+                     <br/> <h1 align="center">Lumânări Parfumate</h1>
+                    <br>
+                    <div class="product-grid">
+                        <div class="product-card" data-id="prod21">
+                            <img src="../images/vanilie.png" />
+                            <h3>Lumânare Vanilie Bourbon</h3>
+                            <p class="price">150 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod21.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod22">
+                            <img src="../images/lavanda.png" />
+                            <h3>Lumânare Lavandă Provence</h3>
+                            <p class="price">150 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod22.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod23">
+                            <img src="../images/scortisoara_pprtocala.png" />
+                            <h3>Lumânare Scorțișoară & Portocală</h3>
+                            <p class="price"> 150 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod23.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod24">
+                            <img src="../images/cafea_nucusoara.png" />
+                            <h3>Lumânare Cafea & Nucșoară</h3>
+                            <p class="price">150 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod24.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod25">
+                            <img src="../images/trandafir.png" />
+                            <h3>Lumânare Florală Trandafir & Iasomie</h3>
+                            <p class="price">170 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod25.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod26">
+                            <img src="../images/menta_eucalipt.jpg" />
+                            <h3>Lumânare Mentă & Eucalipt</h3>
+                            <p class="price"> 150 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod26.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod27">
+                            <img src="../images/miere_lamaie.jpg" />
+                            <h3> Lumânare Miere & Lămâie </h3>
+                            <p class="price">150 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod27.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod28">
+                            <img src="../images/mango_piersic.jpg" />
+                            <h3> Lumânare Piersică & Mango </h3>
+                            <p class="price">150 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod28.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod29">
+                            <img src="../images/santal.jpg" />
+                            <h3>Lumânare Lemn de Santal & Vanilie</h3>
+                            <p class="price">170 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod29.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-id="prod30">
+                            <img src="../images/flori_presate.jpg" />
+                            <h3> Lumânare cu Flori Presate </h3>
+                            <p class="price">200 MDL</p>
+                            <div class="buttons">
+                                <button class="add-to-cart">Adaugă în coș</button>
+                                <button class="view-details" onclick="location.href='prod30.html'">Vezi
+                                    detalii</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main><br>
+        <br>
+        <script>
+            function addToCart(product) {
+                let cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+                if (cart[product.id]) {
+                    cart[product.id].quantity += 1;
+                } else {
+                    cart[product.id] = {
+                        name: product.name,
+                        price: product.price,
+                        quantity: 1,
+                        image: product.imgSrc
+                    };
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${product.name} a fost adăugat în coș.`);
+            }
+
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function () {
+                    const productCard = this.closest('.product-card');
+                    const id = productCard.dataset.id;
+                    const name = productCard.querySelector('h3').innerText;
+                    const price = parseFloat(productCard.querySelector('.price').innerText);
+                    const imgSrc = productCard.querySelector('img').src;
+
+                    const product = { id, name, price, imgSrc };
+
+                    addToCart(product);
+                });
+            });
+        </script>
+
+        <footer>
+            <p>&copy; 2025 GlowSweets. Acest website a fost realizat în cadrul concursului<br />
+                "Tekwill Junior Ambassadors" organizat de proiectul "Tekwill în Fiecare Școală".</p>
+            <div class="socials">
+                <a
+                    href="https://www.instagram.com/enisnatalia6?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+                <a href="https://www.facebook.com/natalia.ajder.9">Facebook</a>
+                <a href="https://www.tiktok.com/@enis.natalia?is_from_webapp=1&sender_device=pc">TikTok</a>
+            </div>
+        </footer>
+
+
+
+</body>
+
+</html>
